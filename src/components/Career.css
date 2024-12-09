@@ -1,0 +1,274 @@
+/* Chatbot.css */
+.career-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100vh;
+    padding: 50px;
+}
+.career-container>div{
+    width: 50%;
+}
+  .chat-window {
+    width: 90%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+  }
+  
+  .messages {
+    flex-grow: 1;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+  }
+  
+  .message.user {
+    align-self: flex-end;
+    background-color: #0f4a51;
+  }
+  
+  .message.bot {
+    align-self: flex-start;
+    background-color: #133814;
+  }
+  
+  .input-area {
+    display: flex;
+    border-top: 1px solid #eee;
+    padding: 10px;
+    background-color: #2d2d2d;
+    border-radius: 10px;
+  }
+  
+  .input-area input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    margin-right: 10px;
+    color: black;
+  }
+  
+  .input-area button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .input-area button:hover {
+    background-color: #0056b3;
+  }
+  .container-contact {
+  background: linear-gradient(90deg, rgb(0, 85, 67), rgb(87, 0, 128));
+  margin: 0;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  padding-top: 20vh;
+  gap: 20px;
+}
+
+* {
+  font-family: arial;
+  padding: 0;
+  margin: 0;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  height: max-content;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: max-content;
+}
+
+.form-container > div {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 80%;
+  height: 40px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+.contact-form textarea {
+  height: 80px;
+  width: 80%;
+}
+
+.contact-form input[type='submit'] {
+  color: rgb(0, 0, 0);
+  background-color: white;
+  height: 40px;
+  border-radius: 15px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.doc-cards {
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  align-items: center;
+  box-shadow: 0px 0px 5px black;
+  border-radius: 10px;
+  z-index: 1;
+  cursor: pointer;
+  transition: all .3s;
+}
+.doc-cards:hover{
+ background-color: rgb(227, 179, 255);
+}
+.doc-cards > h4 {
+  color: black;
+}
+.doc-cards > i {
+  font-size: 30px;
+  color: purple;
+}
+.doc-cards > p {
+  font-size: 12px;
+  text-align: center;
+  color: black;
+}
+
+.about {
+  gap: 1rem;
+  color: white;
+  padding: 2.5%;
+}
+.about > h1,
+.about > p {
+  text-align: start;
+  width: 80%;
+  font-weight: lighter;
+}
+
+/* {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{ RoadMap }}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}} */
+  
+  /* Title Styling */
+  .roadmap-title {
+    text-align: center;
+    color: #a8c7e5;
+    font-size: 2rem;
+    margin: 10px;
+  }
+  
+  /* Steps Container */
+  .roadmap-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  
+  /* Individual Step */
+  .roadmap-step {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #0b282f;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    width: 90%;
+  }
+  
+  /* Step Title */
+  .step-title {
+    color: #ffffff;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: auto;
+  }
+  
+  /* Step Description */
+  .step-description {
+    color: #7c7c7c;
+    line-height: 1.5;
+    display: none;
+    flex-wrap: wrap;
+  }
+ 
+  .roadmap-step:hover >.step-description{
+    display: flex;
+  }
+  @media (max-width: 1000px) {
+    .career-container{
+      flex-direction: column;
+      height: max-content;
+      padding: 70px 10px;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+    .career-container>div{
+      width: 100%;
+  }
+    .form-container {
+      flex-direction: column;
+      width: 100%;
+    }
+    .form-container>div {
+      height: 50%;
+      width: 100%; 
+    }
+    .chat-window{
+      width: 100%;
+    }
+    .roadmap-title{
+      font-size: medium;
+    }
+    .roadmap-step{
+      width: 92%;
+    }
+  }
