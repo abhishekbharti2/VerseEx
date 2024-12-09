@@ -28,8 +28,8 @@ export default function Footer() {
         <span className='scl-head'>Our Social Media Handles </span>
         <div className="socialmedia-handles">
           <a href="https://www.facebook.com/profile.php?id=100027548940668" className="fa fa-facebook"> </a>
-          <a href="https://x.com/AD_Jack9?t=9DGN-8JDwo4rVMXtPKXpUA&s=08" className="fa fa-twitter"> </a>
-          <a href="https://www.instagram.com/ejoyr.fashion?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+          <a href="/" className="fa fa-twitter"> </a>
+          <a href="/"
             className="fa fa-instagram"> </a>
           <a href="https://www.youtube.com/@verseex" className="fa fa-youtube"> </a>
         </div>

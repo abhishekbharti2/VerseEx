@@ -1,7 +1,24 @@
 import './Home.css';
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import myVideo from '../DataSet/vid-3.mp4';
+import YtLinks from '../DataSet/YtLinks.json';
+
 export default function Mission() {
+
+    const [ytLink, setYT] = useState('https://www.youtube.com/embed/5mDn2oq9OV8?si=VNT6V-qcjvN1F2_f');
+    const [ytTitle, setYttitle] = useState('The Universe and It\'s Origin')
+    const [ytLi, setYtLink] = useState('https://www.youtube.com/embed/5mDn2oq9OV8?si=VNT6V-qcjvN1F2_f')
+
+    useEffect(() => {
+        let i = 1;
+        const inter = setInterval(() => {
+          setYttitle(YtLinks.space_topics[i%10].topic)
+          setYT(YtLinks.space_topics[i%10].video_link)
+          i++
+        }, 3500);
+        return () => { clearInterval(inter) }
+    }, [])
+ 
     return (
         <div id='home-container'>
             <video autoPlay muted loop>
@@ -15,13 +32,12 @@ export default function Mission() {
                 <h1>VERSE EX</h1>
                 <h1>EXPLORE THE UNIVERSE</h1>
                 <p>Verse-EX is a learning platform Here you can learn Cosmology and research <br /> We provide latest information about sapce</p>
-                <label htmlFor='Hide-Video' className='head-button' >Let's Explore</label>
-                <strong className='keyword'>Verse-EX: Space Exploration</strong>
+                <span className='yt-links'>{ytTitle} <i htmlFor='Hide-Video'  className='fa fa-youtube' /></span>
+                <label htmlFor='Hide-Video' className='head-button' onClick={() => {setYtLink(ytLink)}} >Watch Video</label>
             </div>
             <input type="checkbox" id="Hide-Video" />
             <label className="video-cont" htmlFor='Hide-Video' >
-                {/* <label htmlFor="Hide-Video">&#10006;</label> */}
-                <iframe src="https://www.youtube.com/embed/5mDn2oq9OV8?si=VNT6V-qcjvN1F2_f" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src={ytLi} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </label>
         </div>
     );

@@ -59,12 +59,24 @@ video{
   background: none;
   background-color: rgb(0, 0, 0);
 }
-.keyword{
-  color: rgb(194, 194, 194);
+.yt-links{
+  color: rgb(46, 255, 206);
+  position: relative;
+  padding: 15px 20px;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.701);
+  border-radius: 20px;
+  animation: colo 3.5s linear infinite;
+  border: 1px solid rgb(46, 0, 72);
+}
+
+.yt-links>i{
+  color: red;
+  font-size: 30px;
+  margin-left: 10px;
   position: absolute;
-  bottom: 0;
-  right: 0;
-  padding: 10px;
+  right: 15px;
+  top: 3px;
 }
 .astronaut-img {
   width: 500px;
@@ -95,7 +107,17 @@ video{
 #Hide-Video:checked~.video-cont{
   display: flex;
 }
-
+@keyframes colo {
+  0%{
+    color: rgb(0, 255, 140);
+  }
+  50%{
+    color: rgb(255, 46, 46);
+  }
+  100%{
+    color: rgb(227, 255, 248);
+  }
+}
 @keyframes astronaut-img-animation {
   0% {
     transform: translateY(0px);
