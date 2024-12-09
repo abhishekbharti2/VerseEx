@@ -1,6 +1,5 @@
 import './Home.css';
 import React, { useEffect, useState } from 'react'
-import myVideo from '../DataSet/vid-3.mp4';
 import YtLinks from '../DataSet/YtLinks.json';
 
 export default function Mission() {
@@ -21,10 +20,6 @@ export default function Mission() {
  
     return (
         <div id='home-container'>
-            <video autoPlay muted loop>
-                <source src={myVideo} type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
             <div id='home-img'>
                 <img src='https://static.vecteezy.com/system/resources/previews/025/002/362/original/3d-astronaut-character-in-space-on-transparent-background-generative-ai-png.png' className='astronaut-img' alt='' />
             </div>
