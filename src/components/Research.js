@@ -47,7 +47,7 @@ export default function Research() {
           <div className='agencies' onClick={() => {
             setFilteredData(data)
             setAgen(null)
-          }}>All Missions</div>
+          }} style={{textAlign:'center'}}>All Missions</div>
           {
             agencies.map((mission) => (
               <div key={mission.id} className='agencies'>
