@@ -1,32 +1,76 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './Research.css';
 import data from '../DataSet/ResData.json';
 
 export default function Research() {
+  const [filteredData, setFilteredData] = useState(data)
+  const [agen, setAgen] = useState(null)
+  // const [loading, setLoading] = useState(true)
+
+  let agencies = data.filter(
+    (item, index, self) =>
+      index === self.findIndex((t) => t.agency === item.agency)
+  );
+
+  function filterAgency(values) {
+    setAgen(values)
+    const filtered = data.filter((item) =>
+      item.agency.includes(values)
+    );
+    setFilteredData(filtered);
+  }
+  function filterMission(values) {
+    const filtered = data.filter((item) =>
+      item.name.includes(values)
+    );
+    setFilteredData(filtered);
+  }
+  useEffect(() => {
+    document.querySelectorAll('.res-card-img').forEach((element) =>{
+      element.style.opacity = '0'
+      element.addEventListener('load', () => {
+        console.log('Image Loaded');
+        element.style.opacity = '1'
+      })
+    })
+  }, []);
+
   return (
     <div className="research-container">
       <h1 className='just-space'>-</h1>
       <section className="research-sec-1">
         <input type="checkbox" id="filter-checkbox" />
-        <label for="filter-checkbox" className="filter-pull-btn">
+        <label htmlFor="filter-checkbox" className="filter-pull-btn">
           &#10093;
         </label>
         <div className="res-filter-bxs">
+          <div className='agencies' onClick={() => {
+            setFilteredData(data)
+            setAgen(null)
+          }}>All Missions</div>
           {
-              data.map((mission) =>(
-                <ul key = {mission.id} >
-                <li className="filter-label">
-                 {mission.agency} : {mission.name}
-              </li>
-              </ul>
-              ))
+            agencies.map((mission) => (
+              <div key={mission.id} className='agencies'>
+                <h3 onClick={() => { filterAgency(mission.agency) }}>
+                  {mission.agency}
+                </h3>
+                {mission.agency === agen && filteredData.map((ageMis) => (
+                  <div key={ageMis.id} onClick={() => { filterMission(ageMis.name) }}>
+                    {ageMis.name}
+                  </div>
+                ))
+                }
+              </div>
+            ))
           }
         </div>
         <div className="res-sub-sec" id="res-all-cards">
-          {data.map((mission) => (
+          {filteredData.map((mission) => (
             <div className="res-cards" key={mission.id}>
-              <img src={mission.image} className="res-card-img" alt="" />
-              <a className="res-card-title" href={`https://en.wikipedia.org/wiki/`+ mission.name}>
+              <div className="loading-icon"> <span></span> </div>
+              <span className='top-of-card'>{mission.agency}</span>
+              <img src={mission.image} className="res-card-img" alt=" " />
+              <a className="res-card-title" href={`https://en.wikipedia.org/wiki/` + mission.name}>
                 {mission.name}
               </a>
               <p className="res-card-info">{mission.information}</p>
