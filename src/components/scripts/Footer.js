@@ -21,8 +21,8 @@ export default function Footer() {
           </div>
           <div className='footer-div1-el'>
             <h4 className='footer-headings'>DEVELOPER TEAM</h4> <br />
-            <p className='fa'>&#xf0e0; verse@ex.in</p>
-            <li><a href="https://bhartiabhi.netlify.app" className='contact-dev'>contact developers</a></li>
+            <p className='fa'>&#xf0e0; verseex@gmail.com</p>
+            <p className='footer-paragraph'>Developer <hr/><a href="https://bhartiabhi.netlify.app" className='contact-dev'>Abhishek Bharti</a></p>
           </div>
         </div>
         <span className='scl-head'>Our Social Media Handles </span>
