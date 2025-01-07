@@ -138,19 +138,24 @@
     width: 100%;
     padding: 0px;
     justify-content: space-evenly;
+    gap: .5%;
+    padding-top: 10px;
   }
-
   .res-filter-bxs {
     z-index: 20;
-    width: max-content;
-    padding: 10px 20px;
+    width: 100%;
+    padding: 10px 0px;
     position: fixed;
-    left: -400px;
+    left: -100%;
     transition: all 0.5s ease;
+    align-items: center;
   }
-
+  .agencies {
+    width: 80%;
+  }
   .res-cards {
     width: min(45%, 220px);
+    margin: .5% 0;
   }
 
   .filter-pull-btn {
@@ -163,7 +168,6 @@
     transition: all 0.5s ease;
     cursor: pointer;
     color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.178);
     border-radius: 20px;
   }
 

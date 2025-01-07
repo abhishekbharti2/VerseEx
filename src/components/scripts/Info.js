@@ -30,7 +30,7 @@ function Info() {
             </div>
             <div className="det-lower">
             <p>{showing.details}</p>
-            <strong><strong style={{color:'green'}}>Result of the Mission: </strong>{showing.result}</strong>
+            <p><strong style={{color:'green'}}>Result: </strong>{showing.result}</p>
             </div>
           </div>
         ))}

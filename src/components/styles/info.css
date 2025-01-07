@@ -77,17 +77,25 @@
     color: black;
     text-align: justify;
 }
-.det-lower>strong{
-    color: black;
-}
+
 @media screen and (max-width: 1100px) {
     .all-details{
-        width: 95%;
+        width: 100%;
     }
     .det-upper{
         flex-direction: column;
     }
     .det-first, .det-second{
         width: 100%;
+    }
+    .det-lower{
+        padding: 10px;
+    }
+    .det-first>span{
+        transform: translate(20px, -20px);
+    }
+    .details-container{
+        padding: 0px 5px;
+        padding-top: 80px;
     }
 }
