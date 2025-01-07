@@ -1,6 +1,6 @@
-import './Home.css';
+import '../styles/Home.css';
 import React, { useEffect, useState } from 'react'
-import YtLinks from '../DataSet/YtLinks.json';
+import YtLinks from '../../DataSet/YtLinks.json';
 
 export default function Mission() {
 

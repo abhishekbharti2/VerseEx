@@ -7,16 +7,17 @@ export default function Navbar(props) {
   useEffect(() => {
     const navbarlink = document.querySelectorAll('.navbar-link');
     const loading = document.getElementById('loading-page');
-
     navbarlink.forEach((gotosrc) => {
       gotosrc.addEventListener('click', () => {
         loading.style.display = 'flex';
+        navbarlink.forEach((navCol) =>{navCol.style.color='white'; navCol.style.borderColor = 'transparent'})
+        gotosrc.style.color = 'rgb(148, 0, 185)';
+        gotosrc.style.borderColor = 'rgb(148, 0, 185)';
         setTimeout(() => {
           loading.style.display = 'none';
         }, 1000);
       });
     });
-    
     return () => {
       navbarlink.forEach((gotosrc) => {
         gotosrc.removeEventListener('click', () => {});
@@ -55,12 +56,12 @@ export default function Navbar(props) {
         </div>
         <ul className="link-container">
           <li>
-            <Link to="/" className="navbar-link">
+            <Link to="/" className="navbar-link" >
               Home
             </Link>
           </li>
           <li>
-            <Link to="Objects" className="navbar-link">
+            <Link to="/Objects" className="navbar-link">
               Space Objects
             </Link>
           </li>
@@ -70,7 +71,7 @@ export default function Navbar(props) {
             </Link>
           </li>
            <li>
-              <Link to="Career" className="navbar-link">
+              <Link to="/Career" className="navbar-link">
               ChatBot
               </Link>
            </li>

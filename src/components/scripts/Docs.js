@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import data from '../DataSet/Objects.json';
-import './Docs.css';
+import data from '../../DataSet/Objects.json';
+import '../styles/Docs.css';
 
 export default function Docs() {
   const [infotitle, setTitle] = useState(data[0].name);

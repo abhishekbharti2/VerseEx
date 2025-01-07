@@ -107,10 +107,6 @@ body {
  border-bottom: 3px solid var(--web-color);
  outline: none;
 }
-.navbar-link:hover {
-  color: var(--web-color);
-  border-bottom-color: var(--web-color);
-}
 
 .label-check {
   position: absolute;

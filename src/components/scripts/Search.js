@@ -1,6 +1,6 @@
-import DummyData from '../DataSet/DocsData.json'
+import DummyData from '../../DataSet/DocsData.json'
 import React, { useState } from 'react';
-import './Search.css';
+import '../styles/Search.css';
 import './Navbar.js'
 
 export default function Search(props) {

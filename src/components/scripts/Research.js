@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import './Research.css';
-import data from '../DataSet/ResData.json';
+import '../styles/Research.css';
+import data from '../../DataSet/ResData.json';
+import { Link } from 'react-router-dom';
 
 export default function Research() {
   const [filteredData, setFilteredData] = useState(data)
@@ -70,9 +71,9 @@ export default function Research() {
               <div className="loading-icon"> <span></span> </div>
               <span className='top-of-card'>{mission.agency}</span>
               <img src={mission.image} className="res-card-img" alt=" " />
-              <a className="res-card-title" href={`https://en.wikipedia.org/wiki/` + mission.name}>
+              <Link className="res-card-title" to={`/Research/${mission.id}`}>
                 {mission.name}
-              </a>
+              </Link>
               <p className="res-card-info">{mission.information}</p>
               <p className="res-card-info">
                 <strong style={{ color: 'green' }}>Results : </strong>

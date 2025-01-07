@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Road from '../DataSet/RoadMap.json';
-import './Career.css';
+import Road from '../../DataSet/RoadMap.json';
+import '../styles/Career.css';
 
 export default function Career() {
   const [messages, setMessages] = useState([
