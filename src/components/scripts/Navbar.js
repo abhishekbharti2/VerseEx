@@ -85,7 +85,7 @@ export default function Navbar(props) {
             <NavLink to='/search'  className = 'navbar-link' id='search-btn' >
               <button className="fa fa-search" type='submit' style = {{color: 'white', cursor:'pointer'}} 
               onClick={() =>{props.setData(val)
-                document.getElementById('checkbox-1').checked = falsegit add .
+                document.getElementById('checkbox-1').checked = false
               }} ></button>
             </NavLink>
           </form>
