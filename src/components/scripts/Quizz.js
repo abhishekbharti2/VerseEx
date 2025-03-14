@@ -47,6 +47,8 @@ const Quizz = () => {
   const handleSubmit = () => {
     if (selectedOption === questions[currentQuestion]?.correct) {
       setScore((prevScore) => prevScore + 5);
+    }else{
+      setScore((prevScore) => prevScore - 2);
     }
     setQuizEnded(true);
   };
@@ -55,10 +57,11 @@ const Quizz = () => {
     <div className="quizz-main-container">
       <div className="quizz-info-container">
         <h2>About the Quiz</h2>
-        <p>This quiz includes questions related to space, cosmology, and technology.</p>
-        <p>You will have 10 seconds to answer each question.</p>
-        <p>Each correct answer awards you 5 points.</p>
-        <p>Top scorers can win exciting prizes!</p>
+        <li>This quiz includes questions related to space, cosmology, and technology.</li>
+        <li>You will have 10 seconds to answer each question.</li>
+        <li>Each correct answer awards you 5 points.</li>
+        <li>Incorrect answer will deduct your score by 2 points.</li>
+        <li>Top scorers can win exciting prizes!</li>
       </div>
       <div className="quizz-container">
         <div className="quizz-container-unique">
@@ -79,6 +82,9 @@ const Quizz = () => {
           ) : quizEnded ? (
             <div className="quizz-result-unique">
               <h2>Your Score: {score}</h2>
+              { score/5===questionLimit &&
+                <h3>Congratulation! 🎉 you made all the questions correct</h3>
+              }
             </div>
           ) : questions.length > 0 ? (
             <div className="quizz-question-box-unique">

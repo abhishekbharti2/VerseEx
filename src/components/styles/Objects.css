@@ -12,16 +12,19 @@
 }
 
 .mySlides {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   overflow: hidden;
 }
 
 #topbgimage {
-  height: 100vh;
   width: max(1000px, 100%);
-  z-index: -1;
+  height: 100vh;
 }
+
 
 .objecttitle {
   position: absolute;
@@ -177,11 +180,11 @@
 @media (max-width: 1000px) {
   .doc-container {
     height: max-content;
-    padding: 60px 0px;
   }
 
   .info-container {
     flex-direction: column;
+    height: max-content;
   }
 
   .info-container>div {
@@ -221,4 +224,5 @@
   .next-prev {
     width: 90%;
   }
+
 }

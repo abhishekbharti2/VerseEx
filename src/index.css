@@ -237,6 +237,11 @@ nav a.active {
   #search-btn{
    display: none;
   }
+  nav a.active {
+    border-color:transparent;
+    background-color: rgb(53, 53, 53);
+  }
+  
 }
 
 /* {{{{{{{{{{{{{{{{{{{{{{{{{{{{{{ Navbar Ends - Loading Page Start }}}}}}}}}}}}}}}}}}}}}}}}}}}}}} */
