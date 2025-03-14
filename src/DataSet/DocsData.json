@@ -1,0 +1,49 @@
+{
+  "type": "standard",
+  "title": "VerseEx Search",
+  "displaytitle": "\u003Cspan class=\"mw-page-title-main\"\u003EWikipedia\u003C/span\u003E",
+  "namespace": {
+    "id": 0,
+    "text": ""
+  },
+  "wikibase_item": "Q52",
+  "titles": {
+    "canonical": "Wikipedia",
+    "normalized": "Wikipedia",
+    "display": "\u003Cspan class=\"mw-page-title-main\"\u003EWikipedia\u003C/span\u003E"
+  },
+  "pageid": 5043734,
+  "thumbnail": {
+    "source": "logo.png",
+    "width": 320,
+    "height": 292
+  },
+  "originalimage": {
+    "source": "logo.png",
+    "width": 103,
+    "height": 94
+  },
+  "lang": "en",
+  "dir": "ltr",
+  "revision": "1251984900",
+  "tid": "3a291f88-8dd8-11ef-a049-7c9250003e6a",
+  "timestamp": "2024-10-19T05:08:50Z",
+  "description": "Free online crowdsourced encyclopedia",
+  "description_source": "local",
+  "content_urls": {
+    "desktop": {
+      "page": "https://verse-ex.netlify.app",
+      "revisions": "https://verse-ex.netlify.app",
+      "edit": "https://verse-ex.netlify.app",
+      "talk": "https://verse-ex.netlify.app"
+    },
+    "mobile": {
+      "page": "https://verse-ex.netlify.app",
+      "revisions": "https://verse-ex.netlify.app",
+      "edit": "https://verse-ex.netlify.app",
+      "talk": "https://verse-ex.netlify.app"
+    }
+  },
+  "extract": "The VerseEx website includes an intuitive search facility that leverages the Wikipedia API to provide users with relevant, reliable information on space-related topics. When a user enters a search term, the system quickly pulls detailed content directly from Wikipedia, presenting it in a streamlined format suited for the exploration theme of VerseEx. This feature makes it easy for users to access verified information on various aspects of space, from celestial phenomena to spacecraft and missions, enhancing the learning experience and supporting informed exploration.",
+  "extract_html": "\u003Cp\u003E\u003Cb\u003EWikipedia\u003C/b\u003E is a free content online encyclopedia written and maintained by a community of volunteers, known as Wikipedians, through open collaboration and the wiki software MediaWiki. Wikipedia is the largest and most-read reference work in history, and is consistently ranked among the ten most visited websites; as of August 2024, it was ranked fourth by Semrush, and seventh by Similarweb. Founded by Jimmy Wales and Larry Sanger on January 15, 2001, Wikipedia has been hosted since 2003 by the Wikimedia Foundation, an American nonprofit organization funded mainly by donations from readers.\u003C/p\u003E"
+}

@@ -1,0 +1,156 @@
+* {
+  font-family: 'Ubuntu', sans-serif;
+}
+#home-container {
+  background: url('..//../DataSet/bg.jpg');
+  background-repeat: no-repeat;
+  height: 100vh;
+  background-size: max(100%, 1500px);
+  background-position: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+  flex-wrap: wrap;
+}
+video{
+  position: fixed;
+  height: auto;
+  width: max(100vw, 1500px);
+  z-index: -1;
+  opacity: 0.7;
+}
+
+#home-container > div {
+  width: max(50%, 300px);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+#home-container > div:first-of-type {
+  align-items: center;
+}
+#home-heading > h1 {
+  color: white;
+  text-shadow: 1px 1px 1px rgb(0, 0, 0);
+  font-size: 70px;
+}
+#home-heading>h1:nth-child(1){
+  color: transparent;
+  -webkit-text-stroke: 1px rgb(183, 0, 255);
+}
+#home-heading>p{
+  padding: 10px;
+  text-shadow: 1px 1px 1px black;
+}
+.head-button{
+  background: linear-gradient(120deg, rgb(77, 0, 112), rgb(0, 0, 119));
+  background-color: black;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+  transition: all 1s linear;
+} 
+.head-button:active{
+  background: none;
+  background-color: rgb(0, 0, 0);
+}
+.yt-links{
+  color: rgb(46, 255, 206);
+  position: relative;
+  padding: 15px 20px;
+  width: 60%;
+  background-color: rgba(0, 0, 0, 0.701);
+  border-radius: 20px;
+  animation: colo 3.5s linear infinite;
+  border: 1px solid rgb(46, 0, 72);
+}
+
+.yt-links>i{
+  color: red;
+  font-size: 30px;
+  margin-left: 10px;
+  position: absolute;
+  right: 15px;
+  top: 3px;
+}
+.astronaut-img {
+  width: 500px;
+  height: 500px;
+  animation: astronaut-img-animation 10s linear infinite;
+}
+.video-cont{
+  display: none;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  background-color: rgba(0, 0, 0, 0.679);
+}
+#Hide-Video{
+  display: none;
+}
+.video-cont>iframe{
+  aspect-ratio: 16/9;
+  width: 50%;
+  padding: 10px;
+  background-color: rgb(66, 0, 0);
+}
+
+#Hide-Video:checked~.video-cont{
+  display: flex;
+}
+@keyframes colo {
+  0%{
+    color: rgb(0, 255, 140);
+  }
+  50%{
+    color: rgb(255, 46, 46);
+  }
+  100%{
+    color: rgb(227, 255, 248);
+  }
+}
+@keyframes astronaut-img-animation {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@media (max-width: 700px) {
+
+  #home-heading > h1 {
+    font-size: 30px;
+  }
+  #home-container > div {
+    width: 100%;
+    height: fit-content;
+    align-items: center;
+    text-align: center;
+  }
+  #home-container {
+    height: max(max-content, 100vh);
+  }
+  .astronaut-img {
+    width: 100%;
+    height: auto;
+  }
+  .keyword{
+    display:none;
+  }
+  .video-cont>iframe{  
+    width: 90%;
+  }
+}
