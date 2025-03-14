@@ -1,11 +1,10 @@
-import DummyData from '../../DataSet/DocsData.json'
 import React, { useState } from 'react';
 import '../styles/Search.css';
 import './Navbar.js'
 
 export default function Search(props) {
 
-  const [result, setResult] = useState(DummyData);
+  const [result, setResult] = useState(null);
   const [error, setError] = useState(null);
 
   const getDataNow = async () => {
@@ -27,7 +26,7 @@ export default function Search(props) {
   }
   return (
     <div className="search-container">
-      {error &&
+      {(error || !result) &&
         <div class="error-container">
         <h1> 404 </h1>
         <p>

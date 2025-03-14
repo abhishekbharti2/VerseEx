@@ -1,12 +1,11 @@
 import React from "react";
-import { useParams } from 'react-router-dom'
-import data from '../../DataSet/ResData.json';
+import {useLocation } from 'react-router-dom'
 import '../styles/info.css';
 
 function Info() {
-  let { id } = useParams();
-  let showData = data.filter((item) =>
-    item.id.includes(id))
+  const location = useLocation();
+  const showData = location.state || {};
+
   return (
     <div className="details-container">
       <div className="all-details">

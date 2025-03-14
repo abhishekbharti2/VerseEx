@@ -74,7 +74,7 @@ export default function Research() {
             <div className="res-cards" key={mission.id}>
               <span className='top-of-card'>{mission.agency}</span>
               <img src={mission.image} className="res-card-img" alt=" " />
-              <Link className="res-card-title" to={`/Research/${mission.id}`}>
+              <Link className="res-card-title" state={mission} to={`/Research/${mission.id}`}>
                 {mission.name}
               </Link>
               <p className="res-card-info">{mission.information}</p>
