@@ -4,7 +4,7 @@ import Navbar from './components/scripts/Navbar.js';
 import Home from './components/scripts/Home.js';
 import Docs from './components/scripts/Docs.js';
 import Footer from './components/scripts/Footer.js';
-import ContactUs from './components/scripts/ContactUs.js';
+import Quizz from './components/scripts/Quizz.js';
 import Research from './components/scripts/Research.js';
 import Search from './components/scripts/Search.js';
 import Career from './components/scripts/Career.js';
@@ -33,15 +33,12 @@ function App() {
       <Navbar setData={setData} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/Objects"
-          element={<Docs />}
-        />
-        <Route path="/Research" element={<Research />} />
-        <Route path="/askus" element={<ContactUs />} />
-        <Route path="/Career" element={<Career />} />
+        <Route path="/objects" element={<Docs />}/>
+        <Route path="/research" element={<Research />} />
+        <Route path="/quizzes" element={<Quizz />} />
+        <Route path="/chatbot" element={<Career />} />
         <Route path="/search" element={<Search getData={getData} setData={setData} />} />
-        <Route path="/Research/:id" element={<Info />} />
+        <Route path="/research/:id" element={<Info />} />
       </Routes>
       <Footer />
     </Router>

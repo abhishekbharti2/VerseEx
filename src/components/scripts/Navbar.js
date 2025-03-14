@@ -1,6 +1,5 @@
 import React, { useState,useEffect} from 'react';
 import { NavLink } from 'react-router-dom';
-// import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
  const [val, setVal] = useState(null);
@@ -58,23 +57,23 @@ export default function Navbar(props) {
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Objects" className="navbar-link">
+            <NavLink to="/objects" className="navbar-link">
               Space
             </NavLink>
           </li>
           <li>
-            <NavLink to="/Research" className="navbar-link">
+            <NavLink to="/research" className="navbar-link">
               Research
             </NavLink>
           </li>
            <li>
-              <NavLink to="/Career" className="navbar-link">
+              <NavLink to="/chatbot" className="navbar-link">
               ChatBot
               </NavLink>
            </li>
           <li>
-            <NavLink to="/askus" className="navbar-link">
-              Contact
+            <NavLink to="/quizzes" className="navbar-link">
+              Quizzes
             </NavLink>
           </li>
           <form className="search-cont" onSubmit={(ev) => {ev.preventDefault()}}>

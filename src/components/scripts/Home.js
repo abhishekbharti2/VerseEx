@@ -1,23 +1,36 @@
 import '../styles/Home.css';
 import React, { useEffect, useState } from 'react'
-import YtLinks from '../../DataSet/YtLinks.json';
 
 export default function Mission() {
-
-    const [ytLink, setYT] = useState('https://youtube.com/embed/YSnbDp44GDs');
-    const [ytTitle, setYttitle] = useState('Formation of Universe')
-    const [ytLi, setYtLink] = useState(null)
+    const [data, setData] = useState([])
+    const [youtube, setYT] = useState({"topic": "loading...", "video_link":""})
+    const [currshow, setCurr] = useState('')
 
     useEffect(() => {
-        let i = 1;
-        const inter = setInterval(() => {
-          setYttitle(YtLinks.space_topics[i%10].topic)
-          setYT(YtLinks.space_topics[i%10].video_link)
-          i++
-        }, 3500);
-        return () => { clearInterval(inter) }
-    }, [])
- 
+        const fetchMissions = async () => {
+            try {
+                const response = await fetch("https://server-verseex.onrender.com/api/youtube");
+                if (!response.ok) throw new Error("Failed to fetch missions");
+                const item = await response.json();
+                setData(item)
+            } catch (error) {
+                console.error("Error fetching missions:", error);
+            }
+        };
+        fetchMissions();
+    }, []);
+
+    useEffect(() => {
+        // if (data.length) {
+            let i = 1;
+            const inter = setInterval(() => {
+                setYT(data.space_topics[i % 10])
+                i++
+            }, 3500);
+            return () => { clearInterval(inter) }
+        // }
+    }, [data])
+
     return (
         <div id='home-container'>
             <div id='home-img'>
@@ -27,12 +40,12 @@ export default function Mission() {
                 <h1>VERSE EX</h1>
                 <h1>EXPLORE THE UNIVERSE</h1>
                 <p>Verse-EX is a learning platform Here you can learn Cosmology and research <br /> We provide latest information about sapce</p>
-                <span className='yt-links'>{ytTitle} <i htmlFor='Hide-Video'  className='fa fa-youtube' /></span>
-                <label htmlFor='Hide-Video' className='head-button' onClick={() => {setYtLink(ytLink)}} >Watch Video</label>
+                <span className='yt-links'>{youtube.topic} <i htmlFor='Hide-Video' className='fa fa-youtube' /></span>
+                <label htmlFor='Hide-Video' className='head-button' onClick={() => { setCurr(youtube.video_link) }} >Watch Video</label>
             </div>
             <input type="checkbox" id="Hide-Video" />
             <label className="video-cont" htmlFor='Hide-Video' >
-                <iframe src={ytLi} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <iframe src={currshow} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </label>
         </div>
     );
