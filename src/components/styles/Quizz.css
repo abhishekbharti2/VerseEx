@@ -1,3 +1,4 @@
+/* Main Quiz Container */
 .quizz-main-container {
     display: flex;
     flex-wrap: wrap;
@@ -10,6 +11,7 @@
     background-size: 100%;
 }
 
+/* Info & Quiz Containers */
 .quizz-info-container, .quizz-container {
     background: linear-gradient(135deg, #3c3c3c, #000000);
     width: 50%;
@@ -38,12 +40,13 @@
     text-align: center;
 }
 
-.quizz-info-container>li{
+.quizz-info-container > li {
     text-align: start;
     width: 80%;
     padding: 10px;
 }
 
+/* Quiz Content */
 .quizz-container-unique {
     width: 90%;
     margin: auto;
@@ -59,6 +62,7 @@
     box-shadow: 0 2px 5px rgb(0, 0, 0);
 }
 
+/* Quiz Options */
 .quizz-options-unique {
     display: flex;
     flex-direction: column;
@@ -85,12 +89,14 @@
     color: black;
 }
 
+/* Timer */
 .quizz-timer-unique {
     margin-top: 10px;
     font-weight: bold;
     color: #ff5555;
 }
 
+/* Buttons */
 .quizz-btn {
     padding: 10px 15px;
     background-color: #673da1;
@@ -107,12 +113,63 @@
     background-color: #800049;
 }
 
+/* Quiz Result */
 .quizz-result-unique {
     font-size: 20px;
     font-weight: bold;
     color: #50fa7b;
 }
 
+/* Review Section */
+.quizz-review {
+    margin-top: 20px;
+    padding: 15px;
+    background: #1e1e1e;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.quizz-review-item {
+    padding: 7px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background: #282a36;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s;
+}
+
+.quizz-review-item *{
+    font-size: 12px;
+    text-align: start;
+    font-weight: lighter;
+}
+
+.quizz-review-item:hover {
+    transform: scale(1.02);
+}
+
+.quizz-review-item.correct {
+    border-left: 5px solid #36fe68;
+    background: rgba(80, 250, 123, 0.1);
+}
+
+.quizz-review-item.incorrect {
+    border-left: 5px solid #ff2e2e;
+    background: rgba(255, 85, 85, 0.1);
+}
+
+.quizz-review-item p {
+    margin: 5px 0;
+    color: white;
+}
+
+.quizz-review-item span{
+    color: #f1fa8c;
+}
+
+/* Responsive Design */
 @media (max-width: 1024px) {
     .quizz-main-container {
         flex-direction: column;
@@ -133,6 +190,13 @@
         font-size: 20px;
     }
     .quizz-info-container p {
+        font-size: 14px;
+    }
+    .quizz-review {
+        padding: 10px;
+    }
+    .quizz-review-item {
+        padding: 10px;
         font-size: 14px;
     }
 }

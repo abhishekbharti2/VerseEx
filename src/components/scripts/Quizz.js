@@ -10,6 +10,7 @@ const Quizz = () => {
   const [quizEnded, setQuizEnded] = useState(false);
   const [quizStarted, setQuizStarted] = useState(false);
   const [questionLimit, setQuestionLimit] = useState(5);
+  const [userAnswers, setUserAnswers] = useState([]);
 
   useEffect(() => {
     fetch("https://server-verseex.onrender.com/api/quizzes")
@@ -19,8 +20,13 @@ const Quizz = () => {
   }, [questionLimit]);
 
   const handleNextQuestion = useCallback(() => {
-    if (selectedOption === questions[currentQuestion]?.correct) {
-      setScore((prevScore) => prevScore + 5);
+    if (selectedOption !== null) {
+      setUserAnswers((prev) => [...prev, { question: questions[currentQuestion]?.question, selected: selectedOption, correct: questions[currentQuestion]?.correct }]);
+      if (selectedOption === questions[currentQuestion]?.correct) {
+        setScore((prevScore) => prevScore + 5);
+      } else {
+        setScore((prevScore) => prevScore - 2);
+      }
     }
     setSelectedOption(null);
     setTimer(10);
@@ -40,15 +46,22 @@ const Quizz = () => {
     }
   }, [timer, quizStarted, quizEnded, handleNextQuestion]);
 
-  const handleStartQuiz = () => {
-    setQuizStarted(true);
+  const handleRestartQuiz = () => {
+    setQuizStarted(false);
+    setQuizEnded(false);
+    setScore(0);
+    setCurrentQuestion(0);
+    setUserAnswers([]);
   };
 
   const handleSubmit = () => {
-    if (selectedOption === questions[currentQuestion]?.correct) {
-      setScore((prevScore) => prevScore + 5);
-    }else{
-      setScore((prevScore) => prevScore - 2);
+    if (selectedOption !== null) {
+      setUserAnswers((prev) => [...prev, { question: questions[currentQuestion]?.question, selected: selectedOption, correct: questions[currentQuestion]?.correct }]);
+      if (selectedOption === questions[currentQuestion]?.correct) {
+        setScore((prevScore) => prevScore + 5);
+      } else {
+        setScore((prevScore) => prevScore - 2);
+      }
     }
     setQuizEnded(true);
   };
@@ -75,16 +88,25 @@ const Quizz = () => {
                   </button>
                 ))}
               </div>
-              <button className="quizz-btn quizz-start-button-unique" onClick={handleStartQuiz}>
+              <button className="quizz-btn quizz-start-button-unique" onClick={() => setQuizStarted(true)}>
                 Start Quiz
               </button>
             </div>
           ) : quizEnded ? (
             <div className="quizz-result-unique">
               <h2>Your Score: {score}</h2>
-              { score/5===questionLimit &&
-                <h3>Congratulation! 🎉 you made all the questions correct</h3>
-              }
+              {score / 5 === questionLimit && <h4 style={{color:'yellow'}}>Congratulations! 🎉 You got all questions correct!</h4>}
+              <h3>Review Your Answers:</h3>
+              <div className="quizz-review">
+                {userAnswers.map((answer, index) => (
+                  <div key={index} className={`quizz-review-item ${answer.selected === answer.correct ? "correct" : "incorrect"}`}>
+                    <p><span>Q:</span> {answer.question}</p>
+                    <p><span>Your Answer:</span> {answer.selected}</p>
+                    <p><span>Correct Answer:</span> {answer.correct}</p>
+                  </div>
+                ))}
+              </div>
+              <button className="quizz-btn" onClick={handleRestartQuiz}>Start Again</button>
             </div>
           ) : questions.length > 0 ? (
             <div className="quizz-question-box-unique">
