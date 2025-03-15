@@ -2,7 +2,7 @@
   font-family: 'Ubuntu', sans-serif;
 }
 #home-container {
-  background: url('..//../DataSet/bg.jpg');
+  background: url('../assets/bg.jpg');
   background-repeat: no-repeat;
   height: 100vh;
   background-size: max(100%, 1500px);

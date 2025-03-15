@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import Road from '../../DataSet/RoadMap.json';
-
+import Road from '../assets/RoadMap.json';
 import '../styles/Career.css';
 
 export default function Career() {
@@ -12,7 +11,7 @@ export default function Career() {
 
   const handleSend = () => {
     if (userInput.trim() !== "") {
-      const userMessage = { text: userInput, sender: "user" };
+      const userMessage = { text: userInput, sender: "user" }; 
       setMessages([...messages, userMessage]);
 
     

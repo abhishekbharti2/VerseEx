@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useCallback } from "react";
 import "../styles/Quizz.css";
+import imgquizz from '../assets/quizz.png'
 
 const Quizz = () => {
   const [questions, setQuestions] = useState([]);
@@ -88,7 +89,7 @@ const Quizz = () => {
         <div className="quizz-container-unique">
           {!quizStarted ? (
             <div>
-              <img src="..//../DataSet/image.png" className="quizz-image" alt=" " />
+              <img src={imgquizz} className="quizz-image" alt=" " />
               <h3>Select Number of Questions:</h3>
               <div className="quizz-limit-buttons-unique">
                 {[5, 10, 20, 50].map((limit) => (
