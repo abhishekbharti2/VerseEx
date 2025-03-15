@@ -111,6 +111,10 @@
 
 .quizz-btn:active {
     background-color: #800049;
+    scale: .9;
+}
+.qs-select-btn{
+  background-color: #800049;
 }
 
 /* Quiz Result */
@@ -180,6 +184,9 @@
         width: 90%;
         padding: 30px 0px;
     }
+}
+.quizz-image{
+    width: 40%;
 }
 
 @media (max-width: 768px) {
