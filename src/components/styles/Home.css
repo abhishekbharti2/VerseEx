@@ -60,14 +60,19 @@ video{
   background-color: rgb(0, 0, 0);
 }
 .yt-links{
-  color: rgb(46, 255, 206);
+  color: rgb(255, 255, 255);
+  display: flex;
   position: relative;
-  padding: 15px 20px;
+  align-items: center;
+  height: 50px;
   width: 60%;
+  padding:0px 10px;
   background-color: rgba(0, 0, 0, 0.701);
   border-radius: 20px;
-  animation: colo 3.5s linear infinite;
+  animation: colo 10s linear infinite;
   border: 1px solid rgb(46, 0, 72);
+  overflow-y: scroll;
+  flex-wrap: nowrap;
 }
 
 .yt-links>i{
@@ -109,13 +114,14 @@ video{
 }
 @keyframes colo {
   0%{
-    color: rgb(0, 255, 140);
+    color: rgb(255, 0, 0);
   }
   50%{
-    color: rgb(255, 46, 46);
+   
+    color: rgb(51, 255, 0);
   }
   100%{
-    color: rgb(227, 255, 248);
+    color: rgb(0, 30, 255);
   }
 }
 @keyframes astronaut-img-animation {

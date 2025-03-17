@@ -2,8 +2,8 @@ import '../styles/Home.css';
 import React, { useEffect, useState } from 'react'
 
 export default function Mission() {
-    const [data, setData] = useState([])
-    const [youtube, setYT] = useState({"topic": "loading...", "video_link":""})
+    const [data, setData] = useState({})
+    const [youtube, setYT] = useState({ "topic": "loading...", "video_link": "" })
     const [currshow, setCurr] = useState('')
 
     useEffect(() => {
@@ -21,14 +21,12 @@ export default function Mission() {
     }, []);
 
     useEffect(() => {
-        // if (data.length) {
-            let i = 1;
-            const inter = setInterval(() => {
-                setYT(data.space_topics[i % 10])
-                i++
-            }, 3500);
-            return () => { clearInterval(inter) }
-        // }
+        let i = 0;
+        const inter = setInterval(() => {
+            setYT(data.space_topics[i % (data.space_topics.length)])
+            i++
+        }, 3500);
+        return () => { clearInterval(inter) }
     }, [data])
 
     return (
