@@ -18,7 +18,7 @@ const Quizz = () => {
     return array.sort(() => Math.random() - 0.5);
   };
 
-  useEffect(() => { 
+  useEffect(() => {
     fetch("https://server-verseex.onrender.com/api/quizzes")
       .then((res) => res.json())
       .then((data) => {
@@ -49,7 +49,7 @@ const Quizz = () => {
   useEffect(() => {
     if (quizStarted && timer > 0 && !quizEnded) {
       const interval = setTimeout(() => setTimer((prev) => prev - 1), 1000);
-      return () => clearTimeout(interval); 
+      return () => clearTimeout(interval);
     } else if (timer === 0) {
       handleNextQuestion();
     }
@@ -76,7 +76,7 @@ const Quizz = () => {
   };
 
   return (
-    <div className="quizz-main-container">
+    <div className="quizz-main-container" >
       <div className="quizz-info-container">
         <h2>About the Quiz</h2>
         <li>This quiz includes questions related to space, cosmology, and technology.</li>
@@ -85,7 +85,7 @@ const Quizz = () => {
         <li>Incorrect answer will deduct your score by 2 points.</li>
         <li>Top scorers can win exciting prizes! 🏆</li>
       </div>
-      <div className="quizz-container">
+      <div className="quizz-container" id="info-section">
         <div className="quizz-container-unique">
           {!quizStarted ? (
             <div>
@@ -93,10 +93,18 @@ const Quizz = () => {
               <h3>Select Number of Questions:</h3>
               <div className="quizz-limit-buttons-unique">
                 {[5, 10, 20, 50].map((limit) => (
-                  <button key={limit} className={`quizz-btn ${limit===questionLimit?"qs-select-btn" : ""}`} onClick={() => setQuestionLimit(limit)}>  {limit} </button>
+                  <button key={limit} className={`quizz-btn ${limit === questionLimit ? "qs-select-btn" : ""}`} onClick={() => setQuestionLimit(limit)}>  {limit} </button>
                 ))}
               </div>
-              <button className="quizz-btn quizz-start-button-unique" onClick={() => setQuizStarted(true)}>
+              <button className="quizz-btn quizz-start-button-unique" onClick={() => {
+                const element = document.getElementById('info-section');
+                if (!element) return;
+                window.scroll({
+                  top: element.offsetTop-70,
+                  behavior: 'smooth'
+                })
+                setQuizStarted(true)
+              }}>
                 Start Quiz
               </button>
             </div>

@@ -7,7 +7,7 @@ import Footer from './components/scripts/Footer.js';
 import Quizz from './components/scripts/Quizz.js';
 import Research from './components/scripts/Research.js';
 import Search from './components/scripts/Search.js';
-import Career from './components/scripts/Career.js';
+import ChatEx from './components/scripts/ChatEx.js';
 import Info from './components/scripts/Info.js';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -36,7 +36,7 @@ function App() {
         <Route path="/objects" element={<Docs />}/>
         <Route path="/research" element={<Research />} />
         <Route path="/quizzes" element={<Quizz />} />
-        <Route path="/chatbot" element={<Career />} />
+        <Route path="/chatex" element={<ChatEx />} />
         <Route path="/search" element={<Search getData={getData} setData={setData} />} />
         <Route path="/research/:id" element={<Info />} />
       </Routes>

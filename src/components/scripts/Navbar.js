@@ -67,8 +67,8 @@ export default function Navbar(props) {
             </NavLink>
           </li>
            <li>
-              <NavLink to="/chatbot" className="navbar-link">
-              ChatBot
+              <NavLink to="/chatex" className="navbar-link">
+              ChatEx
               </NavLink>
            </li>
           <li>

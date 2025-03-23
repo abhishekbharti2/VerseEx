@@ -1,0 +1,23 @@
+[
+  {
+    "sender": "Alice",
+    "email": "alice123@gmail.com",
+    "timestamp": "14:30",
+    "message": "Hey guys! How's your day going?",
+    "avatar": "https://i.pravatar.cc/40?img=1"
+  },
+  {
+    "sender": "Bob",
+    "email": "bob_williams@gmail.com",
+    "timestamp": "14:32",
+    "message": "Hey Alice! Pretty good, just finished work. What about you?",
+    "avatar": "https://i.pravatar.cc/40?img=2"
+  },
+  {
+    "sender": "Charlie",
+    "email": "charlie_rocks@gmail.com",
+    "timestamp": "14:33",
+    "message": "Hi everyone! Just chilling at home. Any weekend plans?",
+    "avatar": "https://i.pravatar.cc/40?img=3"
+  }
+]
