@@ -33,7 +33,7 @@ export default function NewAdd() {
                 throw new Error("Please fill all required fields");
             }
     
-            const response = await fetch("http://localhost:5000/api/missions/add", {
+            const response = await fetch("https://server-verseex.onrender.com/api/missions/add", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
