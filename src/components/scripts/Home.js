@@ -30,21 +30,21 @@ export default function Mission() {
     }, [data])
 
     return (
-        <div id='home-container'>
-            <div id='home-img'>
-                <img src='https://static.vecteezy.com/system/resources/previews/025/002/362/original/3d-astronaut-character-in-space-on-transparent-background-generative-ai-png.png' className='astronaut-img' alt='' />
+        <div className='verseex-home-container'>
+            <div className='verseex-astronaut-container'>
+                <img src='https://static.vecteezy.com/system/resources/previews/025/002/362/original/3d-astronaut-character-in-space-on-transparent-background-generative-ai-png.png' className='verseex-astronaut-img' alt='astronaut' />
             </div>
-            <div id='home-heading' >
-                <h1>VERSE EX</h1>
-                <h1>EXPLORE THE UNIVERSE</h1>
-                <p>Verse-EX is a learning platform Here you can learn Cosmology and research <br /> We provide latest information about sapce</p>
-                <span className='yt-links'>{youtube.topic} <i htmlFor='Hide-Video' className='fa fa-youtube' /></span>
-                <label htmlFor='Hide-Video' className='head-button' onClick={() => { setCurr(youtube.video_link) }} >Watch Video</label>
+            <div className='verseex-content-container' >
+                <h1 className='verseex-main-title'>VERSE EX</h1>
+                <h1 className='verseex-subtitle'>EXPLORE THE UNIVERSE</h1>
+                <p className='verseex-description'>Verse-EX is a learning platform Here you can learn Cosmology and research <br /> We provide latest information about space</p>
+                <span className='verseex-yt-link'>{youtube.topic} <i htmlFor='verseex-hide-video' className='fa fa-youtube verseex-yt-icon' /></span>
+                <label htmlFor='verseex-hide-video' className='verseex-watch-button' onClick={() => { setCurr(youtube.video_link) }} >Watch Video</label>
             </div>
-            <input type="checkbox" id="Hide-Video" />
-            <label className="video-cont" htmlFor='Hide-Video' >
+            <input type="checkbox" id="verseex-hide-video" className='verseex-video-checkbox' />
+            <label className="verseex-video-container" htmlFor='verseex-hide-video' >
                 <iframe src={currshow} title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </label>
         </div>
     );
-}   
+}

@@ -9,6 +9,8 @@ import Research from './components/scripts/Research.js';
 import Search from './components/scripts/Search.js';
 import ChatEx from './components/scripts/ChatEx.js';
 import Info from './components/scripts/Info.js';
+import NewAdd from './components/scripts/NewAdd.js'
+import Game from './components/scripts/Game.js'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
@@ -39,6 +41,8 @@ function App() {
         <Route path="/chatex" element={<ChatEx />} />
         <Route path="/search" element={<Search getData={getData} setData={setData} />} />
         <Route path="/research/:id" element={<Info />} />
+        <Route path='/addForm' element={<NewAdd />} /> 
+        <Route path='/game' element={<Game/>} />
       </Routes>
       <Footer />
     </Router>

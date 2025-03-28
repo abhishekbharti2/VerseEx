@@ -76,6 +76,11 @@ export default function Navbar(props) {
               Quizzes
             </NavLink>
           </li>
+          <li>
+            <NavLink to='/game' className="navbar-link">
+              Play Game
+            </NavLink>
+          </li>
           <form className="search-cont" onSubmit={(ev) => {ev.preventDefault()}}>
             <input
               type="text"
@@ -106,15 +111,3 @@ export default function Navbar(props) {
     </>
   );
 }
-
-// Navbar.propTypes = {
-//   title: PropTypes.string.isRequired,
-//   mode: PropTypes.string
-// }
-// this is how to define a proptype it can be anything like { number, string, boolean, null, object etc}
-
-// Navbar.defaultProps = {
-//   title: 'Set title here',
-// link1: 'Set about',
-// link2: 'Set Home'}
-// to show the default prop use this

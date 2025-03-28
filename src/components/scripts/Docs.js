@@ -3,10 +3,10 @@ import '../styles/Objects.css';
 
 export default function Docs() {
   const [data, setData] = useState([{
-    "id": "1", "name": "Loading data[index]...", "information": "", "image_link": "logo.png"
-  }])
-  const [slide, setSlide] = useState(0)
-  const [index, setIndex] = useState(0)
+    "id": "1", "name": "Loading data...", "information": "", "image_link": "logo.png"
+  }]);
+  const [slide, setSlide] = useState(0);
+  const [index, setIndex] = useState(0);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -15,8 +15,7 @@ export default function Docs() {
         const response = await fetch("https://server-verseex.onrender.com/api/objects");
         if (!response.ok) throw new Error("Failed to fetch missions");
         const item = await response.json();
-        setData(item)
-
+        setData(item);
       } catch (error) {
         console.error("Error fetching missions:", error);
       }
@@ -33,72 +32,123 @@ export default function Docs() {
 
   useEffect(() => {
     const change = setInterval(() => {
-      let v = (slide + 1) % data.length
+      let v = (slide + 1) % data.length;
       if (data[v]) {
-        setSlide(v)
+        setSlide(v);
       }
     }, 4000);
 
-    document.getElementById('main-image').addEventListener('load', () => {
-      console.log('Image Loaded');
+    document.getElementById('main-image')?.addEventListener('load', () => {
       setLoading(false);
-    })
+    });
 
-    return () => { clearInterval(change) }
-  }, [data.image, data, slide]);
+    return () => { clearInterval(change); }
+  }, [data, slide]);
 
   function changeNext() {
-    let v = index + 1
+    let v = index + 1;
     if (data[v]) {
-      setIndex(v)
-      setLoading(true)
+      setIndex(v);
+      setLoading(true);
     }
   }
 
   function changePrev() {
-    let v = index - 1
+    let v = index - 1;
     if (data[v]) {
-      setIndex(v)
-      setLoading(true)
+      setIndex(v);
+      setLoading(true);
     }
   }
 
   return (
-    <div className="doc-container">
-      <div className="slideshow-container">
-        <div className="mySlides">
-          <img src={data[slide].image_link} alt=' ' id='topbgimage' />
-          <div className="objecttitle">{data[slide].name}</div>
+    <div className="cosmic-explorer">
+      {/* Hero Slideshow */}
+      <div className="cosmic-hero">
+        <div className="hero-slide">
+          <img 
+            src={data[slide]?.image_link} 
+            alt={data[slide]?.name} 
+            className="hero-image" 
+          />
+          <div className="hero-overlay">
+            <h1 className="hero-title">{data[slide]?.name}</h1>
+          </div>
         </div>
-        <div className='objectdots'>
-          {data.map((item) => (<span key={item.id} className={`objdot ${item.id === data[slide].id ? "currentIn" : ""}`}></span>))}
+        
+        <div className="slide-indicators">
+          {data.map((item) => (
+            <span 
+              key={item.id} 
+              className={`slide-dot ${item.id === data[slide]?.id ? "active" : ""}`}
+            ></span>
+          ))}
         </div>
       </div>
-      <div className="info-container">
-        <div className="info-left">
-          <h3 className="info-heading">{data[index].name} Overview</h3>
-          <p className="info-paragraph">
-            {data[index].information}
-            <div>
-              <a className='head-button learn-more' href={`https://en.wikipedia.org/wiki/${data[index].name}`}
-                target='_blank' rel='noreferrer' onClick={() => { alert("You're redirecting to Wikipedia") }} >Learn More</a>
-              <button className='explore-btn learn-more' onClick={speakNow}>&#128266;</button>
-            </div>
-          </p>
-        </div>
-        <div className="info-right">
-          <img src={data[index].image_link} className="topic-image" alt="this is topic" id='main-image' />
 
-          {
-            loading && <div id="spinner">
-              <span className='loader-doc'></span>
-              Loading Image
+      {/* Content Section */}
+      <div className="cosmic-content">
+        <div className="content-info">
+          <h2 className="content-title">
+            {data[index]?.name} <span className="highlight">Overview</span>
+          </h2>
+          <div className="content-description">
+            <p>{data[index]?.information}</p>
+            <div className="content-actions">
+              <a 
+                className="action-button learn-more" 
+                href={`https://en.wikipedia.org/wiki/${data[index]?.name}`}
+                target='_blank' 
+                rel='noreferrer'
+              >
+                Explore on Wikipedia
+              </a>
+              <button 
+                className="action-button audio-button" 
+                onClick={speakNow}
+                aria-label="Listen to description"
+              >
+                🔊 Listen
+              </button>
             </div>
-          }
-          <div className="next-prev">
-            <button onClick={changePrev}>&#10094; Prev</button>
-            <span>{data[index].id}</span>
-            <button onClick={changeNext} >Next &#10095;</button>
+          </div>
+        </div>
+        
+        <div className="content-media">
+          <div className="media-container">
+            {loading && (
+              <div className="media-loader">
+                <div className="cosmic-spinner"></div>
+                <span>Loading Cosmic Image...</span>
+              </div>
+            )}
+            <img 
+              src={data[index]?.image_link} 
+              alt={data[index]?.name} 
+              className="detail-image"
+              id="main-image"
+              onLoad={() => setLoading(false)}
+            />
+          </div>
+          
+          <div className="media-navigation">
+            <button 
+              className="nav-button prev-button" 
+              onClick={changePrev}
+              disabled={index === 0}
+            >
+              ← Previous
+            </button>
+            <span className="nav-counter">
+              {data[index]?.id} / {data.length}
+            </span>
+            <button 
+              className="nav-button next-button" 
+              onClick={changeNext}
+              disabled={index === data.length - 1}
+            >
+              Next →
+            </button>
           </div>
         </div>
       </div>
