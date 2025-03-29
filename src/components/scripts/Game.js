@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../styles/Game.css';
 
-const cardSymbols = ['🍎', '🍌', '🍒', '🍓', '🍊', '🍋', '🍉', '🍇'];
+const cardSymbols = ['🌍', '🪐', '🌕', '🌟', '🚀', '🌌', '🌠', '🛸'];
 
 const Game = () => {
   const [cards, setCards] = useState([]);
