@@ -40,6 +40,7 @@ export default function Mission() {
                 <p className='verseex-description'>Verse-EX is a learning platform Here you can learn Cosmology and research <br /> We provide latest information about space</p>
                 <span className='verseex-yt-link'>{youtube.topic} <i htmlFor='verseex-hide-video' className='fa fa-youtube verseex-yt-icon' /></span>
                 <label htmlFor='verseex-hide-video' className='verseex-watch-button' onClick={() => { setCurr(youtube.video_link) }} >Watch Video</label>
+                <a href="/solar.html">3D Simulation</a>
             </div>
             <input type="checkbox" id="verseex-hide-video" className='verseex-video-checkbox' />
             <label className="verseex-video-container" htmlFor='verseex-hide-video' >
