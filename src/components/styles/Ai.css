@@ -1,0 +1,126 @@
+/* Terminal Styling */
+.terminal {
+  max-width: 100%;
+  margin: 0 auto;
+  background-color: #000;
+  color: #00ff00;
+  font-family: 'Courier New', monospace;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+.terminal-header {
+  background-color: #111;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid #00ff00;
+}
+
+.terminal-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.close { background-color: #ff5f56; }
+.minimize { background-color: #ffbd2e; }
+.expand { background-color: #27c93f; }
+
+.terminal-title {
+  margin-left: 15px;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #00ff00;
+}
+
+.terminal-content {
+  padding: 20px;
+  min-height: 400px;
+  position: relative;
+}
+
+.typing-output {
+  line-height: 1.5;
+  white-space: pre-wrap;
+  font-size: 1rem;
+  text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+}
+
+/* Spinning Cursor */
+.spinning-cursor {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+  color: #00ff00;
+  text-shadow: 0 0 8px #00ff00;
+  font-size: 2rem;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Terminal Button */
+.terminal-btn {
+  width: 100%;
+  padding: 12px;
+  background-color: #003300;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.terminal-btn:hover:not(.disabled) {
+  background-color: #005500;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.terminal-btn:active:not(.disabled) {
+  background-color: #002200;
+}
+
+.terminal-btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Status Messages */
+.loading, .error, .not-found {
+  padding: 20px;
+  color: #00ff00;
+}
+
+.error {
+  color: #ff5555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .terminal {
+    border-radius: 0;
+  }
+  
+  .terminal-content {
+    padding: 15px;
+    min-height: 300px;
+  }
+  
+  .typing-output {
+    font-size: 0.9rem;
+  }
+}

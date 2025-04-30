@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
 import "../styles/info.css";
-
+import MissionDetails from "./Ai";
 function Info() {
   const location = useLocation();
 
@@ -31,6 +31,7 @@ function Info() {
                 <p className="verseex-details-text">{location.state.details}</p>
                 <p className="verseex-result"><strong className="verseex-result-title">Result: </strong>{location.state.result}</p>
               </div>
+              <MissionDetails topicName={location.state.id}/>
             </div>
           ) 
         }
