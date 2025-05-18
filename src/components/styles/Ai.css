@@ -43,8 +43,9 @@
 
 .terminal-content {
   padding: 20px;
-  min-height: 400px;
+  height: 500px;
   position: relative;
+  overflow-y: scroll;
 }
 
 .typing-output {

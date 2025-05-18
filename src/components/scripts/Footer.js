@@ -30,7 +30,7 @@ export default function Footer() {
             <span className="fa">&#xf0e0;</span> verseex@gmail.com
           </p>
           <p className="footer-dev">
-            Developer: <a href="https://bhartiabhi.netlify.app" className="dev-link">Abhishek Bharti</a>
+            Developer: <a href="https://www.linkedin.com/in/siddharth-singh-5b343228a/" className="dev-link">Siddharth Singh</a>
           </p>
         </div>
       </div>
@@ -40,10 +40,10 @@ export default function Footer() {
       </div>
 
       <div className="social-media">
-        <a href="https://www.facebook.com/profile.php?id=100027548940668" className="social-icon fa fa-facebook"> </a>
+        <a href="/" className="social-icon fa fa-facebook"> </a>
         <a href="/" className="social-icon fa fa-twitter"> </a>
         <a href="/" className="social-icon fa fa-instagram"> </a>
-        <a href="https://www.youtube.com/@verseex" className="social-icon fa fa-youtube"> </a>
+        <a href="/" className="social-icon fa fa-youtube"> </a>
       </div>
 
       <div className="copyright">
